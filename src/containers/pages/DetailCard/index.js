@@ -6,6 +6,7 @@ import { ButtonLabel } from "../../../Components/Button";
 import { CardProgress } from "../../../Components/Card";
 import DetailPage from "../../../Components/YourDecks/DetailPage/DetailPage";
 import ScoredDetail from "../../../Components/ScoredDetail";
+import { withRouter } from "react-router-dom";
 
 class Home extends Component {
   constructor(props) {
@@ -23,6 +24,7 @@ class Home extends Component {
   }
 
   render() {
+    const { history } = this.props;
     return (
       <DetailPage>
         {/* navbar */}
@@ -31,7 +33,10 @@ class Home extends Component {
             <div className="col-lg-10 col-md-12 mx-auto">
               <div className="container-fluid">
                 <nav aria-label="breadcrumb">
-                  <ol className="breadcrumb" style={{ backgroundColor: "#fff" }}>
+                  <ol
+                    className="breadcrumb"
+                    style={{ backgroundColor: "#fff" }}
+                  >
                     <li className="breadcrumb-item">
                       <a href="/" style={{ color: "#898B8F" }}>
                         All Decks
@@ -42,13 +47,20 @@ class Home extends Component {
                         Computer Science
                       </a>
                     </li>
-                    <li className="breadcrumb-item active" aria-current="page" style={{ color: "#000" }}>
+                    <li
+                      className="breadcrumb-item active"
+                      aria-current="page"
+                      style={{ color: "#000" }}
+                    >
                       Machine Learning
                     </li>
                   </ol>
                 </nav>
 
-                <div className="card" style={{ backgroundColor: "#6884F5", borderRadius: 10 }}>
+                <div
+                  className="card"
+                  style={{ backgroundColor: "#6884F5", borderRadius: 10 }}
+                >
                   <div className="card-body d-flex flex-direction-row justify-content-between align-items-center">
                     <div>
                       <h3 style={{ color: "#fff" }}>Machine Learning</h3>
@@ -57,7 +69,11 @@ class Home extends Component {
                       </p>
                     </div>
                     <div>
-                      <FontAwesomeIcon color={"#fff"} icon={faTrash} className="mr-4" />
+                      <FontAwesomeIcon
+                        color={"#fff"}
+                        icon={faTrash}
+                        className="mr-4"
+                      />
                       <FontAwesomeIcon color={"#fff"} icon={faPencilAlt} />
                     </div>
                   </div>
@@ -67,16 +83,23 @@ class Home extends Component {
                   <div className="col-lg-6 col-md-6 col-sm-12 col-12">
                     <div className="d-flex flex-direction-row mt-4 align-items-center">
                       <h5 className="pr-2">on</h5>
-                      <ButtonLabel title="Computer Science" backgroundColor={"#FBF7FF"} />
+                      <ButtonLabel
+                        title="Computer Science"
+                        backgroundColor={"#FBF7FF"}
+                      />
                     </div>
                     <div className="mt-2">
-                      <p className="pr-2 text-mute" style={{ color: "#898B8F" }}>
+                      <p
+                        className="pr-2 text-mute"
+                        style={{ color: "#898B8F" }}
+                      >
                         All terms and examples related to machine learning
                       </p>
                       <div className="border mt-2" />
                       <h4 className="mt-3">Your Progress</h4>
                       <p className="pr-2" style={{ color: "#898B8F" }}>
-                        Your progress is based on the time you studied, or so called preview, the deck.
+                        Your progress is based on the time you studied, or so
+                        called preview, the deck.
                       </p>
 
                       <CardProgress label="Not studied" progress={138} />
@@ -93,7 +116,12 @@ class Home extends Component {
                         </p>
 
                         <ScoredDetail score={60} />
-                        <ButtonLabel title="Take a test" className={"w-100 pb-2 pt-2 border-bottom-purple"} backgroundColor={"#FBF7FF"} />
+                        <ButtonLabel
+                          onClick={() => history.push("/home/ready-to-test")}
+                          title="Take a test"
+                          className={"w-100 pb-2 pt-2 border-bottom-purple"}
+                          backgroundColor={"#FBF7FF"}
+                        />
                       </div>
                     </div>
                   </div>
@@ -107,4 +135,4 @@ class Home extends Component {
   }
 }
 
-export default Home;
+export default withRouter(Home);

@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import './session.scss';
-import emot from '../../assets/image/emot-session.png';
+import React, { useState } from "react";
+import "./session.scss";
+import emot from "../../assets/image/emot-session.png";
 
-const Session = () => {
+const Session = ({ onClick }) => {
   const [session, setSession] = useState([1]);
   return (
     <div>
@@ -10,7 +10,7 @@ const Session = () => {
         <div className="session-card">
           <div className="title">Machine Learning</div>
           <p>Great progress! Keep studying to master this deck</p>
-          <button>Resume</button>
+          <button onClick={onClick}>Resume</button>
         </div>
       ) : (
         <div className="no-session-container">

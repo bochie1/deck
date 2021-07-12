@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Navbar from "../../../Components/Header/Header";
+import Navbar from "../../Header/Header";
 
 class DetailPage extends Component {
   constructor(props) {
@@ -50,7 +50,7 @@ class DetailPage extends Component {
             {...this.props}
           />
         </div>
-        <div style={{ marginTop: 50 }} />
+        <div style={{ marginTop: 150 }} />
         {this.props.children}
       </div>
     );

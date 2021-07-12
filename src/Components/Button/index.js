@@ -4,7 +4,9 @@ import React from "react";
 export const Button = ({ outline, title = "Button", className }) => {
   return (
     <button
-      className={`btn btn-danger${outline ? "-outline" : ""} ${className} btn-sm`}
+      className={`btn btn-danger${
+        outline ? "-outline" : ""
+      } ${className} btn-sm`}
       style={{
         borderRadius: "1.5rem",
         paddingLeft: 20,
@@ -20,11 +22,20 @@ export const Button = ({ outline, title = "Button", className }) => {
   );
 };
 
-export const ButtonLabel = ({ outline, title = "Button", className, backgroundColor = "#C78EF7", color = "#C78EF7", onClick }) => {
+export const ButtonLabel = ({
+  outline,
+  title = "Button",
+  className,
+  backgroundColor = "#C78EF7",
+  color = "#C78EF7",
+  onClick,
+}) => {
   return (
     <button
       onClick={onClick}
-      className={`btn btn-default${outline ? "-outline" : ""} ${className} btn-sm`}
+      className={`btn btn-default${
+        outline ? "-outline" : ""
+      } ${className} btn-sm`}
       style={{
         borderRadius: "1.5rem",
         paddingLeft: 20,

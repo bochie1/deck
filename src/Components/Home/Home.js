@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
-import './home.scss';
+import React, { useState } from "react";
+import "./home.scss";
 
-import SessionCard from '../Session/SessionCard';
-import Deck from '../Deck/Deck';
-import NoDeckSession from './NoDeckSession';
+import SessionCard from "../Session/SessionCard";
+import Deck from "../Deck/Deck";
+import NoDeckSession from "./NoDeckSession";
+import { withRouter } from "react-router-dom";
 
-const Home = () => {
+const Home = ({ history }) => {
   const [state, setState] = useState(true);
   return (
     <div>
@@ -13,7 +14,7 @@ const Home = () => {
         <div className="home">
           <h3>Your Last Session</h3>
           <div className="session-container">
-            <SessionCard />
+            <SessionCard onClick={() => history.push("/home/test/result")} />
           </div>
 
           <div className="title-info">
@@ -21,14 +22,14 @@ const Home = () => {
             <a href="">View All </a>
           </div>
           <div className="decks-container">
-            <Deck color={'#AB6FDC'} />
-            <Deck color={'#FF8264'} />
-            <Deck color={'#F4AA27'} />
-            <Deck color={'#AB6FDC'} />
-            <Deck color={'#6884F5'} />
-            <Deck color={'#FF8264'} />
-            <Deck color={'#F4AA27'} />
-            <Deck color={'#AB6FDC'} />
+            <Deck color={"#AB6FDC"} />
+            <Deck color={"#FF8264"} />
+            <Deck color={"#F4AA27"} />
+            <Deck color={"#AB6FDC"} />
+            <Deck color={"#6884F5"} />
+            <Deck color={"#FF8264"} />
+            <Deck color={"#F4AA27"} />
+            <Deck color={"#AB6FDC"} />
           </div>
         </div>
       ) : (
@@ -38,4 +39,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default withRouter(Home);
